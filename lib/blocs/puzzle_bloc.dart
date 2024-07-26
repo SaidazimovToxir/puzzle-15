@@ -36,7 +36,6 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
     final emptyIndex = tiles.indexOf(0);
     final tileIndex = tiles.indexOf(tile);
 
-    // Check if the tile can be moved (adjacent to the empty space)
     if (_canTileMove(tileIndex, emptyIndex)) {
       tiles[emptyIndex] = tile;
       tiles[tileIndex] = 0;
@@ -69,7 +68,7 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
 
   void _startTimer() {
     _timer?.cancel();
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       add(TimerTicked());
     });
   }

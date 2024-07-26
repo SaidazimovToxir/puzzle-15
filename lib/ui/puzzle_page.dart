@@ -121,7 +121,7 @@ class PuzzlePage extends StatelessWidget {
         return AlertDialog(
           title: const Text('Congratulations!'),
           content: Text('You completed the puzzle in $timeElapsed seconds!'),
-          actions: <Widget>[
+          actions: [
             TextButton(
               child: const Text('OK'),
               onPressed: () {
